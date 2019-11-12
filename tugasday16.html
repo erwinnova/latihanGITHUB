@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Tugas Day 16</title>
+</head>
+<body>
+    <form id="soal">
+        <h4 id="pertanyaan">1. Siapakah Presiden ketiga Republik Indonesia?</h4>
+        <input type="radio" name="satu" value="habibi" />Prof.B.J.Habibie
+        <input type="radio" name="satu" value="abdurrahman" />Abdurrahman Wahid
+        <input type="radio" name="satu" value="soekarno" />Ir. Soekarno
+        <input type="radio" name="satu" value="joko" />Joko Widodo
+        <h4 id="pertanyaan">2. Berikut adalah nama-nama bahasa pemrograman, kecuali...</h4>
+        <input type="radio" name="dua" value="phyton" />Phyton
+        <input type="radio" name="dua" value="micro" />Micro:bit
+        <input type="radio" name="dua" value="javascript" />Javascript
+        <input type="radio" name="dua" value="html" />HTML
+        <h4 id="pertanyaan">3. Apa judul lagu yang diduga diplagiat oleh lagu 'Sayang' Via Valen?</h4>
+        <input type="radio" name="tiga" value="qing" />Qing Fei De Yi
+        <input type="radio" name="tiga" value="ting" />Ting Hai
+        <input type="radio" name="tiga" value="mirai" />Mirai E Kiroro
+        <input type="radio" name="tiga" value="hau" />Hau Siang Hau Siang
+        <h4 id="pertanyaan">4. Siapakah sosok dibalik topeng Batman?</h4>
+        <input type="radio" name="empat" value="natasha" />Natasha Romanov
+        <input type="radio" name="empat" value="peter" />Peter Parker
+        <input type="radio" name="empat" value="tony" />Tony Stark
+        <input type="radio" name="empat" value="bruce" />Bruce Wayne
+        <br>
+        <br>
+        <input type="button" value="Submit" onclick="submitJawaban()">
+        
+    </form>
+    <br>
+    <h2 id="nilai">
+
+    </h2>
+
+    <script>
+    
+        function submitJawaban(){
+            var temp = ""
+            var jawaban1 = document.getElementsByName("satu");
+            var jawaban2 = document.getElementsByName("dua");
+            var jawaban3 = document.getElementsByName("tiga");
+            var jawaban4 = document.getElementsByName("empat");
+            output = 0;
+            for (var a = 0; a<jawaban1.length; a++){
+                if (jawaban1[a].checked){
+                    temp = (jawaban1[a].value)
+                    if (temp == "habibi"){
+                        output += 25
+                    }
+                }
+            }
+            for (var b = 0; b<jawaban2.length; b++){
+                if (jawaban2[b].checked){
+                    temp = (jawaban2[b].value)
+                    if (temp == "micro"){
+                        output += 25
+                    }
+                }
+            }
+            for (var c = 0; c<jawaban3.length; c++){
+                if (jawaban3[c].checked){
+                    temp = (jawaban3[c].value)
+                    if (temp == "mirai"){
+                        output += 25
+                    }
+                }
+            }
+            for (var d = 0; d<jawaban4.length; d++){
+                if (jawaban4[d].checked){
+                    temp = (jawaban4[d].value)
+                    if (temp == "bruce"){
+                        output += 25
+                    }
+                }
+            }
+           
+            document.getElementById("nilai").innerHTML = `Nilai akhir Anda ${output}`
+            
+            
+        }
+        
+    
+    </script>
+    
+</body>
+</html>
